@@ -27,6 +27,7 @@ class MainActivity : FragmentActivity() {
     var state: MutableState<String> = mutableStateOf("")
     //lateinit var launcher: ActivityResultLauncher<Intent>
     //var apiTests = APITests()
+    // Hello
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
