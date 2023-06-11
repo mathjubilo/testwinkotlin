@@ -11,6 +11,7 @@ import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.biometric.BiometricManager
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -30,6 +31,7 @@ class MainActivity : FragmentActivity() {
     // Hello
 
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

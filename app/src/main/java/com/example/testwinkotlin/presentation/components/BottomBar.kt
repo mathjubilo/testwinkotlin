@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.testwinkotlin.presentation.navigation.app.AppRoutes
+import com.example.testwinkotlin.presentation.navigation.Screens
 
 @Composable
 fun BottomBar(
@@ -42,28 +42,28 @@ fun BottomBar(
         BottomBarItem(
             title = "Active Incidents",
             image = com.example.testwinkotlin.R.drawable.logo,
-            screen = AppRoutes.activeIncidents,
+            screen = Screens.ActiveIncidentsScreen.route,
             currentDestination = currentDestination,
             navigate = navigate
         )
         BottomBarItem(
             title = "Followed Incidents",
             image = com.example.testwinkotlin.R.drawable.logo,
-            screen = AppRoutes.followedIncidents,
+            screen = Screens.FollowedIncidentsScreen.route,
             currentDestination = currentDestination,
             navigate = navigate
         )
         BottomBarItem(
             title = "Distribution Centers",
             image = com.example.testwinkotlin.R.drawable.logo,
-            screen = AppRoutes.distributionCenters,
+            screen = Screens.DistributionCentersScreen.route,
             currentDestination = currentDestination,
             navigate = navigate
         )
         BottomBarItem(
             title = "My Profirle",
             image = com.example.testwinkotlin.R.drawable.logo,
-            screen = AppRoutes.myProfile,
+            screen = Screens.MyProfileScreen.route,
             currentDestination = currentDestination,
             navigate = navigate
         )

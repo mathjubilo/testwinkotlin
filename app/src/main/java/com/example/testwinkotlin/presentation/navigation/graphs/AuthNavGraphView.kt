@@ -8,8 +8,7 @@ import androidx.navigation.compose.composable
 import com.example.testwinkotlin.presentation.login.LoginView
 import com.example.testwinkotlin.presentation.launchScreen.LaunchScreenView
 import com.example.testwinkotlin.presentation.login.LoginViewEvent
-import com.example.testwinkotlin.presentation.navigation.app.AppRoutes
-import com.example.testwinkotlin.presentation.navigation.auth.AuthRoutes
+import com.example.testwinkotlin.presentation.navigation.Screens
 
 @RequiresApi(Build.VERSION_CODES.R)
 fun NavGraphBuilder.AuthNavGraphView(
@@ -17,25 +16,25 @@ fun NavGraphBuilder.AuthNavGraphView(
     intent: Intent?
 ) {
     navigation(
-        route = AuthRoutes.auth,
-        startDestination = AuthRoutes.launchScreen,
+        route = Screens.AuthNavGraphRoute.route,
+        startDestination = Screens.LaunchScreen.route,
         ) {
 
-        composable(AuthRoutes.launchScreen) {
+        composable(Screens.LaunchScreen.route) {
 
             LaunchScreenView(
                 navigateToLoginView = { event ->
-                    navController.navigate("${AuthRoutes.login}?event=${event}")
+                    navController.navigate("${Screens.Login.route}?event=${event}")
                 },
                 navigateToAppView = {
-                    navController.navigate(AppRoutes.app)
+                    navController.navigate(Screens.MainNavGraphRoute.route)
                 },
                 intent = intent
             )
         }
 
         composable(
-            route = "${AuthRoutes.login}?event={event}",
+            route = "${Screens.Login.route}?event={event}",
             arguments = listOf(
                 navArgument("event") {
                     defaultValue = LoginViewEvent.showLoginForm
@@ -45,10 +44,10 @@ fun NavGraphBuilder.AuthNavGraphView(
         ) { backStackEntry ->
             LoginView(
                 navigateToAppView = {
-                    navController.navigate(AppRoutes.app)
+                    navController.navigate(Screens.MainNavGraphRoute.route)
                 },
                 navigateToLaunchScreenView = {
-                    navController.navigate(AuthRoutes.launchScreen)
+                    navController.navigate(Screens.LaunchScreen.route)
                 }
             )
         }
